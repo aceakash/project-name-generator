@@ -1,11 +1,24 @@
 {
   "name": "app-name-generator",
   "version": "1.0.0",
-  "description": "Generate a random app name e.g. \"resonant-silence\" (like Heroku)",
+  "description": "Generate a random, unique, heroku-like name for your app, project, server etc. e.g. \"resonant-silence\" (like Heroku)",
   "main": "src/generator.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aceakash/app-name-generator.git"
+  },
+  "keywords": [
+    "heroku",
+    "name",
+    "generate",
+    "unique",
+    "random",
+    "generator",
+    "generater"
+  ],
   "author": "Akash Kurdekar",
   "license": "ISC",
   "devDependencies": {
