@@ -3,23 +3,23 @@ var _             = require('lodash'),
   adjectives    = require('../src/adjectives');
 
 module.exports.generate = function (addNumberSuffix) {
-  var rawAppName = getRawAppName(!!addNumberSuffix);
+  var rawProjName = getRawProjName(!!addNumberSuffix);
   return {
-    spaced: rawAppName.join(' '),
-    dashed: rawAppName.join('-'),
-    raw: rawAppName
+    spaced: rawProjName.join(' '),
+    dashed: rawProjName.join('-'),
+    raw: rawProjName
   };
 };
 
-function getRawAppName(addNumberSuffix) {
-  var rawAppName = [
+function getRawProjName(addNumberSuffix) {
+  var rawProjName = [
     _.sample(adjectives).toLowerCase(),
     _.sample(nouns).toLowerCase()
   ];
 
   if (addNumberSuffix) {
-    rawAppName.push( _.random(1, 9999) );
+    rawProjName.push( _.random(1, 9999) );
   }
 
-  return rawAppName;
+  return rawProjName;
 }

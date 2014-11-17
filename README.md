@@ -1,13 +1,13 @@
-# App Name Generator
+# Project Name Generator
 
 Generate quirky names like "spiffy-waterfall", "sassy-bread", "mature-dew-8239" to use wherever you need a random but memorable name.
 
 ###Install
-`npm install app-name-generator --save`
+`npm install project-name-generator --save`
 
 ###Quick Start
 ```
-var generate = require('app-name-generator').generate;
+var generate = require('project-name-generator').generate;
 
 generate().dashed; // 'sassy-bread'
 
