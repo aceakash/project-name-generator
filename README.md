@@ -13,7 +13,7 @@ generate().dashed; // 'sassy-bread'
 
 generate().spaced; // 'unwavering coal'
 
-generate().raw; // ['undisturbed', 'iceberg', 2125]
+generate().raw; // ['undisturbed', 'iceberg']
 
 generate(true).dashed; // 'pithy-willow-7794'
 
@@ -38,7 +38,7 @@ So `generate(true)` will return:
 {
     spaced: 'limitless pond 6452', 
     dashed: 'limitless-pond-6452', 
-    raw: ['whispering', 'valley', 6452]
+    raw: ['limitless', 'pond', 6452]
 }
 ```
 
