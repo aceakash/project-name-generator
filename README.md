@@ -2,10 +2,10 @@
 
 Generate quirky names like "spiffy-waterfall", "sassy-bread", "mature-dew-8239" to use wherever you need a random but memorable name.
 
-###Install
+##Install
 `npm install project-name-generator --save`
 
-###Quick Start
+##Quick Start
 ```
 var generate = require('project-name-generator').generate;
 
@@ -20,7 +20,7 @@ generate(true).dashed; // 'pithy-willow-7794'
 generate(true).raw; // ['gentle', 'guru', 621]
 ```
 
-###API
+##API
 The module returns an object with a single method `generate(addNumberSuffix)`
 
 Calling `generate()` with no arguments will return an object:
@@ -42,10 +42,13 @@ So `generate(true)` will return:
 }
 ```
 
-###Tests
+##Tests
 To run tests locally:
 ```
 npm install
 
 npm test
 ```
+
+##Build Status
+![Build status](https://codeship.com/projects/c049a9a0-7fa1-0132-a98e-66b1976afe6a/status?branch=master)
