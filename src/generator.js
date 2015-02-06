@@ -7,6 +7,7 @@ module.exports.generate = function (addNumberSuffix) {
   return {
     spaced: rawProjName.join(' '),
     dashed: rawProjName.join('-'),
+    fused: rawProjName.join(''),
     raw: rawProjName
   };
 };
