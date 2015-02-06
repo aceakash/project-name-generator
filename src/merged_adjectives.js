@@ -1,5 +1,4 @@
-module.exports =
-  [ 'aback',
+[ 'aback',
   'abaft',
   'abandoned',
   'abashed',
@@ -1326,4 +1325,4 @@ module.exports =
   'zealous',
   'zesty',
   'zippy',
-  'zonked' ];
+  'zonked' ]

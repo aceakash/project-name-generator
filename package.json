@@ -29,6 +29,6 @@
     "gulp-jasmine": "^1.0.1"
   },
   "dependencies": {
-    "lodash": "^2.4.1"
+    "lodash": "^3.1.0"
   }
 }

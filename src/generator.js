@@ -14,6 +14,7 @@ module.exports.generate = function (addNumberSuffix) {
 function getRawProjName(addNumberSuffix) {
   var rawProjName = [
     _.sample(adjectives).toLowerCase(),
+    _.sample(adjectives).toLowerCase(),
     _.sample(nouns).toLowerCase()
   ];
 
