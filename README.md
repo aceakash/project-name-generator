@@ -41,8 +41,9 @@ Calling `generate()` with no arguments will return an object:
 ```
 
 The `options` argument object can have properties
-    * **words** (number) - Number of words generated (excluding number). All words will be adjectives, except the last one which will be a noun.
-    * **number** (boolean) - Whether a numeric suffix is generated or not. The number is between 1 - 9999, both inclusive.
+
+* **words** (number) - Number of words generated (excluding number). All words will be adjectives, except the last one which will be a noun. Defaults to **2**.
+* **number** (boolean) - Whether a numeric suffix is generated or not. The number is between 1 - 9999, both inclusive. Defaults to **false**.
 
 `generate({ words: 3 })` will return:
 ```javascript
