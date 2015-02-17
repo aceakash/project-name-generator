@@ -1,26 +1,32 @@
-var _             = require('lodash'),
-  nouns         = require('../src/nouns'),
-  adjectives    = require('../src/adjectives');
+var _ = require('lodash'),
+  nouns = require('../src/nouns'),
+  adjectives = require('../src/adjectives');
 
-module.exports.generate = function (addNumberSuffix) {
-  var rawProjName = getRawProjName(!!addNumberSuffix);
+module.exports.generate = function (options) {
+  var defaults = {
+    number: false,
+    words: 2
+  };
+  options = _.merge(defaults, options || {});
+
+  var raw = getRawProjName(options);
+
   return {
-    spaced: rawProjName.join(' '),
-    dashed: rawProjName.join('-'),
-    raw: rawProjName
+    raw: raw,
+    dashed: raw.join('-'),
+    spaced: raw.join(' ')
   };
 };
 
-function getRawProjName(addNumberSuffix) {
-  var rawProjName = [
-    _.sample(adjectives).toLowerCase(),
-    _.sample(adjectives).toLowerCase(),
-    _.sample(nouns).toLowerCase()
-  ];
+function getRawProjName(options) {
+  var raw = [];
+  _.times(options.words - 1, function () {
+    raw.push(_.sample(adjectives).toLowerCase());
+  });
+  raw.push(_.sample(nouns).toLowerCase());
 
-  if (addNumberSuffix) {
-    rawProjName.push( _.random(1, 9999) );
+  if (options.number) {
+    raw.push(_.random(1, 9999));
   }
-
-  return rawProjName;
+  return raw;
 }

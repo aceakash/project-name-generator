@@ -9,11 +9,9 @@ describe('generator', function () {
   });
 
   describe('generate', function () {
-
     var generate = generator.generate;
 
     describe('when called with no argument', function () {
-
       var projName;
 
       beforeEach(function () {
@@ -48,68 +46,57 @@ describe('generator', function () {
       it("has a property spaced, which is a string of raw's items joined with a space", function () {
         expect(projName.spaced).toBe(projName.raw.join(' '));
       });
-
     });
 
-    describe('when called with a truthy value as the sole argument', function () {
-
+    describe('when called with an options object', function () {
       var projName;
 
-      beforeEach(function () {
-        projName = generate(true);
+      it('with {}, shows default behaviour', function () {
+        projName = generate({});
+        expect(projName.raw.length).toBe(2);
+        expect(typeof projName.raw[0]).toBe('string');
+        expect(typeof projName.raw[1]).toBe('string');
       });
 
-      it('has a property raw which is an array of two strings and a number', function () {
+      it('with {number: true}, includes number', function () {
+        projName = generate({number: true});
         expect(projName.raw.length).toBe(3);
         expect(typeof projName.raw[0]).toBe('string');
         expect(typeof projName.raw[1]).toBe('string');
         expect(typeof projName.raw[2]).toBe('number');
       });
 
-      it('has an array raw, the third item of which is a number from 1 to 9999', function () {
-        var num = projName.raw[2];
-        expect(num).toBeDefined();
-        expect(num).toBeLessThan(10000);
-        expect(num).toBeGreaterThan(0);
+      it('with {words: n}, has n-1 adjectives and 1 noun', function () {
+        projName = generate({words: 3});
+        expect(projName.raw.length).toBe(3);
+        expect(_.contains(adjectives, projName.raw[0])).toBe(true);
+        expect(_.contains(adjectives, projName.raw[1])).toBe(true);
+        expect(_.contains(nouns, projName.raw[2])).toBe(true);
+
+        projName = generate({words: 5});
+        expect(projName.raw.length).toBe(5);
+        expect(_.contains(adjectives, projName.raw[0])).toBe(true);
+        expect(_.contains(adjectives, projName.raw[1])).toBe(true);
+        expect(_.contains(adjectives, projName.raw[2])).toBe(true);
+        expect(_.contains(adjectives, projName.raw[3])).toBe(true);
+        expect(_.contains(nouns, projName.raw[4])).toBe(true);
       });
 
-      it("has a property dashed, which is a string of raw's items joined with a dash", function () {
-        expect(projName.dashed).toBe(projName.raw.join('-'));
-      });
+      it('with {words: 3, number: true}, has 2 adjectives, 1 noun and 1 number', function () {
+        projName = generate({words: 3, number: true});
+        expect(projName.raw.length).toBe(4);
+        expect(_.contains(adjectives, projName.raw[0])).toBe(true);
+        expect(_.contains(adjectives, projName.raw[1])).toBe(true);
+        expect(_.contains(nouns, projName.raw[2])).toBe(true);
+        expect(typeof projName.raw[3]).toBe('number');
 
-      it("has a property spaced, which is a string of raw's items joined with a space", function () {
-        expect(projName.spaced).toBe(projName.raw.join(' '));
-      });
-
-      it('has the third item in "raw", when called with other truthy values', function () {
-        _.each([generate(1), generate('something'), generate({one: 1})],
-          function (projName) {
-            expect(typeof projName.raw[2]).toBe('number');
-          });
-      });
-    });
-
-    describe('when called with a falsey value as the sole argument', function () {
-      var projName;
-
-      beforeEach(function () {
-        projName = generate(false);
-      });
-
-      it('has a property raw with only two string items', function () {
-        expect(projName.raw.length).toBe(2);
-        expect(typeof projName.raw[0]).toBe('string');
-        expect(typeof projName.raw[1]).toBe('string');
-      });
-
-      it('has only two items in "raw", when called with other falsey values', function () {
-        _.each([generate(0), generate(''), generate(null)],
-          function (projName) {
-            expect(projName.raw.length).toBe(2);
-          });
+        console.log(generate({words: 5, number: true}));
+        console.log(generate({words: 5, number: true}));
+        console.log(generate({words: 5, number: true}));
+        console.log(generate({words: 5, number: true}));
+        console.log(generate({words: 5, number: true}));
+        console.log(generate({words: 5, number: true}));
       });
     });
   });
-})
-
-
+});
