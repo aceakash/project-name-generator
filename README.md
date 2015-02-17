@@ -11,7 +11,7 @@ This version introduces some breaking changes - please see the [tag 1.0.0](https
 `npm install project-name-generator --save`
 
 ##Quick Start
-```
+```javascript
 var generate = require('project-name-generator').generate;
 
 generate().dashed; // 'uptight-guitar'
@@ -32,7 +32,7 @@ generate({ words: 4, number: true }).dashed; // 'breakable-judicious-luxuriant-t
 The module returns an object with a single method `generate(options)`
 
 Calling `generate()` with no arguments will return an object:
-```
+```javascript
 {
     raw: ['whispering', 'valley'],
     dashed: 'whispering-valley',
@@ -45,7 +45,7 @@ The `options` argument object can have properties
     * **number** (boolean) - Whether a numeric suffix is generated or not. The number is between 1 - 9999, both inclusive.
 
 `generate({ words: 3 })` will return:
-```
+```javascript
 {
     raw: ['harmonious', 'endurable', 'substance'],
     dashed: 'harmonious-endurable-substance',
@@ -54,7 +54,7 @@ The `options` argument object can have properties
 ```
 
 `generate({ words: 5, number: true })` will return:
-```
+```javascript
 {
   raw: [ 'exciting', 'cooperative', 'legal', 'lackadaisical', 'blood', 4099 ],
   dashed: 'exciting-cooperative-legal-lackadaisical-blood-4099',
