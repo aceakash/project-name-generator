@@ -1,44 +1,65 @@
 # Project Name Generator
 
-Generate quirky names like "spiffy-waterfall", "sassy-bread", "mature-dew-8239" to use wherever you need a random but memorable name.
+Generate quirky names like *spiffy-waterfall*, *sassy-bread*, *mature-dew-8239* to use wherever you need a random but memorable name.
+
+Useful for object names, temp folders, passwords, project names, unique ids etc
+
+##Note
+This version introduces some breaking changes - please see the [tag 1.0.0](https://github.com/aceakash/project-name-generator/releases/tag/1.0.0) for the older version. 
 
 ##Install
 `npm install project-name-generator --save`
 
 ##Quick Start
-```
+```javascript
 var generate = require('project-name-generator').generate;
 
-generate().dashed; // 'sassy-bread'
+generate().dashed; // 'uptight-guitar'
 
-generate().spaced; // 'unwavering coal'
+generate().spaced; // 'grandiose clam'
 
-generate().raw; // ['undisturbed', 'iceberg']
+generate().raw; // ['deluxe', 'grandmother']
 
-generate(true).dashed; // 'pithy-willow-7794'
+generate({ number: true }).dashed; // 'disgraceful-temper-7794'
 
-generate(true).raw; // ['gentle', 'guru', 621]
+generate({ words: 4 }).raw; // ['tiny', 'crabby', 'wired', 'quicksand']
+
+generate({ words: 4, number: true }).dashed; // 'breakable-judicious-luxuriant-tax-3931'
+
 ```
 
 ##API
-The module returns an object with a single method `generate(addNumberSuffix)`
+The module returns an object with a single method `generate(options)`
 
 Calling `generate()` with no arguments will return an object:
-```
+```javascript
 {
-    spaced: 'whispering valley', 
-    dashed: 'whispering-valley', 
-    raw: ['whispering', 'valley']
+    raw: ['whispering', 'valley'],
+    dashed: 'whispering-valley',
+    spaced: 'whispering valley'
 }
 ```
-Passing `true` (or a truthy value) to `generate()` will include a number from 1-9999 (both inclusive) at the end.
 
-So `generate(true)` will return:
-```
+The `options` argument object can have properties
+
+* **words** (number) - Number of words generated (excluding number). All words will be adjectives, except the last one which will be a noun. Defaults to **2**.
+* **number** (boolean) - Whether a numeric suffix is generated or not. The number is between 1 - 9999, both inclusive. Defaults to **false**.
+
+`generate({ words: 3 })` will return:
+```javascript
 {
-    spaced: 'limitless pond 6452', 
-    dashed: 'limitless-pond-6452', 
-    raw: ['limitless', 'pond', 6452]
+    raw: ['harmonious', 'endurable', 'substance'],
+    dashed: 'harmonious-endurable-substance',
+    spaced: 'harmonious endurable substance'
+}
+```
+
+`generate({ words: 5, number: true })` will return:
+```javascript
+{
+  raw: [ 'exciting', 'cooperative', 'legal', 'lackadaisical', 'blood', 4099 ],
+  dashed: 'exciting-cooperative-legal-lackadaisical-blood-4099',
+  spaced: 'exciting cooperative legal lackadaisical blood 4099'
 }
 ```
 
