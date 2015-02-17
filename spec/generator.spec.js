@@ -89,13 +89,6 @@ describe('generator', function () {
         expect(_.contains(adjectives, projName.raw[1])).toBe(true);
         expect(_.contains(nouns, projName.raw[2])).toBe(true);
         expect(typeof projName.raw[3]).toBe('number');
-
-        console.log(generate({words: 5, number: true}));
-        console.log(generate({words: 5, number: true}));
-        console.log(generate({words: 5, number: true}));
-        console.log(generate({words: 5, number: true}));
-        console.log(generate({words: 5, number: true}));
-        console.log(generate({words: 5, number: true}));
       });
     });
   });
