@@ -12,7 +12,7 @@ This version introduces some breaking changes - please see the [tag 1.0.0](https
 
 ##Quick Start
 ```javascript
-var generate = require('project-name-generator').generate;
+var generate = require('project-name-generator');
 
 generate().dashed; // 'uptight-guitar'
 
@@ -29,7 +29,7 @@ generate({ words: 4, number: true }).dashed; // 'breakable-judicious-luxuriant-t
 ```
 
 ##API
-The module returns an object with a single method `generate(options)`
+The module returns single method `generate(options)`
 
 Calling `generate()` with no arguments will return an object:
 ```javascript

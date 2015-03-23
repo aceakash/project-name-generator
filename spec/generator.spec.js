@@ -1,16 +1,14 @@
 var _ = require('lodash'),
   nouns = require('../src/nouns'),
   adjectives = require('../src/adjectives'),
-  generator = require('../src/generator');
+  generate = require('../src/generator');
 
 describe('generator', function () {
   it('has a generate function', function () {
-    expect(typeof generator.generate).toBe('function');
+    expect(typeof generate).toBe('function');
   });
 
   describe('generate', function () {
-    var generate = generator.generate;
-
     describe('when called with no argument', function () {
       var projName;
 
@@ -90,6 +88,15 @@ describe('generator', function () {
         expect(_.contains(nouns, projName.raw[2])).toBe(true);
         expect(typeof projName.raw[3]).toBe('number');
       });
+    });
+  });
+
+  describe('legacy generate property', function () {
+    it('is also available as a generate property', function () {
+      var name = require('../src/generator').generate();
+      expect(name.dashed).toBeDefined();
+      expect(name.spaced).toBeDefined();
+      expect(name.raw).toBeDefined();
     });
   });
 });

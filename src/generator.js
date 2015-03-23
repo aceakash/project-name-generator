@@ -2,7 +2,11 @@ var _ = require('lodash'),
   nouns = require('../src/nouns'),
   adjectives = require('../src/adjectives');
 
-module.exports.generate = function (options) {
+
+module.exports = generate;
+
+generate.generate = generate;
+function generate(options) {
   var defaults = {
     number: false,
     words: 2
@@ -16,7 +20,7 @@ module.exports.generate = function (options) {
     dashed: raw.join('-'),
     spaced: raw.join(' ')
   };
-};
+}
 
 function getRawProjName(options) {
   var raw = [];
