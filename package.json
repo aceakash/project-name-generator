@@ -1,6 +1,6 @@
 {
   "name": "project-name-generator",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Generate a random, unique, heroku-like name for your app/project/server etc. e.g. \"resonant-silence\"",
   "main": "src/generator.js",
   "scripts": {
