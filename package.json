@@ -33,5 +33,5 @@
   },
   "bin":{
 	"project-name-generator": "src/generator-bin.js"
-  },
+  }
 }
