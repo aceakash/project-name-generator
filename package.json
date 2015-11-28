@@ -30,5 +30,8 @@
   },
   "dependencies": {
     "lodash": "^3.1.0"
+  },
+  "bin":{
+	"project-name-generator": "src/generator-bin.js"
   }
 }
