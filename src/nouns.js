@@ -275,7 +275,6 @@ module.exports = [
   "feeling",
   "field",
   "finger",
-  "finger",
   "fire",
   "fireman",
   "fish",
