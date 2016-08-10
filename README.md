@@ -26,6 +26,8 @@ generate({ words: 4 }).raw; // ['tiny', 'crabby', 'wired', 'quicksand']
 
 generate({ words: 4, number: true }).dashed; // 'breakable-judicious-luxuriant-tax-3931'
 
+generate({ words: 2, alliterative: true }).spaced; // 'elegant experience'
+
 ```
 
 ##API
