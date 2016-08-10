@@ -10,6 +10,7 @@ function main(args){
 	var dashed = false;
 	var raw = false;
 	var spaced = false;
+  var alliterative = false;
 	for (x=0; x<args.length; x++){
 		switch(args[x]){
 			case "-w":
@@ -34,10 +35,14 @@ function main(args){
 			case "--spaced":
 				spaced = true;
 				break;
+      case "-a":
+      case "--alliterative":
+        alliterative = true;
+        break;
 		}
 	}
 
-	var project_name = generate({words: words, number: number});
+	var project_name = generate({words: words, number: number, alliterative: alliterative});
 
 	if (dashed){
 		console.log(project_name.dashed);

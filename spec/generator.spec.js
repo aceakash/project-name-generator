@@ -88,6 +88,14 @@ describe('generator', function () {
         expect(_.contains(nouns, projName.raw[2])).toBe(true);
         expect(typeof projName.raw[3]).toBe('number');
       });
+
+      it('with {words: 2, number: false, alliterative: true}, has 1 adjective and 1 noun beginning with same letter', function() {
+        projName = generate({words: 2, number: false, alliterative: true});
+        expect(projName.raw.length).toBe(2);
+        expect(_.contains(adjectives, projName.raw[0])).toBe(true);
+        expect(_.contains(nouns, projName.raw[1])).toBe(true);
+        expect(projName.raw[0].substring(0, 1).toLowerCase() === projName.raw[1].substring(0, 1).toLowerCase()).toBe(true);
+      });
     });
   });
 
