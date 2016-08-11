@@ -97,6 +97,15 @@ describe('generator', function () {
         expect(_.includes(nouns, projName.raw[1])).to.be(true);
         expect(projName.raw[0].substring(0, 1).toLowerCase() === projName.raw[1].substring(0, 1).toLowerCase()).to.be(true);
       });
+
+      it('with {words: 2, number: false, alliterative: "d"}, has 1 adjective and 1 noun beginning with the letter "d"', function() {
+        projName = generate({words: 2, number: false, alliterative: 'd'});
+        expect(projName.raw.length).to.be(2);
+        expect(_.includes(adjectives, projName.raw[0])).to.be(true);
+        expect(_.includes(nouns, projName.raw[1])).to.be(true);
+        expect(projName.raw[0].substring(0, 1).toLowerCase() === 'd').to.be(true);
+        expect(projName.raw[1].substring(0, 1).toLowerCase() === 'd').to.be(true);
+      });
     });
   });
 
