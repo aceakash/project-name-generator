@@ -4,9 +4,6 @@ Generate quirky names like *spiffy-waterfall*, *sassy-bread*, *mature-dew-8239* 
 
 Useful for object names, temp folders, passwords, project names, unique ids etc
 
-##Note
-This version introduces some breaking changes - please see the [tag 1.0.0](https://github.com/aceakash/project-name-generator/releases/tag/1.0.0) for the older version.
-
 ##Install
 `npm install project-name-generator --save`
 
@@ -83,6 +80,7 @@ npm install
 npm test
 ```
 
+The library has been tested with Node.js 4.2.6
 
 ##Build Status
 ![Build status](https://codeship.com/projects/c049a9a0-7fa1-0132-a98e-66b1976afe6a/status?branch=master)
