@@ -82,5 +82,7 @@ npm test
 
 The library has been tested with Node.js 4.2.6
 
-##Build Status
-[ ![Codeship Status for aceakash/project-name-generator](https://codeship.com/projects/261b5340-4472-0134-6925-4ed1b3e90ffc/status?branch=master)](https://codeship.com/projects/168462)
+## Status
+[ ![Build Status for aceakash/project-name-generator](https://codeship.com/projects/261b5340-4472-0134-6925-4ed1b3e90ffc/status?branch=master)](https://codeship.com/projects/168462)
+
+![How up-to-date are dependencies?](https://david-dm.org/aceakash/project-name-generator.svg)]
