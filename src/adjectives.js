@@ -416,7 +416,6 @@ module.exports =
   'foamy',
   'fond',
   'foolish',
-  'for',
   'foregoing',
   'forgetful',
   'forlorn',
