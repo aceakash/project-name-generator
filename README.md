@@ -4,10 +4,10 @@ Generate quirky names like *spiffy-waterfall*, *sassy-bread*, *mature-dew-8239* 
 
 Useful for object names, temp folders, passwords, project names, unique ids etc
 
-##Install
+## Install
 `npm install project-name-generator --save`
 
-##Quick Start
+## Quick Start
 ```javascript
 var generate = require('project-name-generator');
 
@@ -27,7 +27,7 @@ generate({ words: 2, alliterative: true }).spaced; // 'elegant experience'
 
 ```
 
-##API
+## API
 The module returns single method `generate(options)`
 
 Calling `generate()` with no arguments will return an object:
@@ -72,7 +72,7 @@ The `options` argument object can have properties
 }
 ```
 
-##Tests
+## Tests
 To run tests locally:
 ```
 npm install
