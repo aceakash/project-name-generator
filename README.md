@@ -80,7 +80,7 @@ npm install
 npm test
 ```
 
-The library has been tested with Node.js 4.2.6
+The library has been tested with Node.js 6.11.0
 
 ## Status
 [ ![Build Status for aceakash/project-name-generator](https://codeship.com/projects/261b5340-4472-0134-6925-4ed1b3e90ffc/status?branch=master)](https://codeship.com/projects/168462)
