@@ -8,7 +8,7 @@ program
     .option('-w, --words [num]', 'number of words [2]', 2)
     .option('-n, --numbers', 'use numbers')
     .option('-a, --alliterative', 'use alliterative')
-    .option('-o --output [output]', 'output type', /^(raw|dashed|spaced)$/i)
+    .option('-o, --output [output]', 'output type [raw|dashed|spaced]', /^(raw|dashed|spaced)$/i)
     .parse(process.argv)
 
 let project_name = generate({words: program.words, number: program.numbers, alliterative: program.alliterative});
