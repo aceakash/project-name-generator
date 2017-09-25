@@ -27,6 +27,35 @@ generate({ words: 2, alliterative: true }).spaced; // 'elegant experience'
 
 ```
 
+## Quickstart CLI
+This package contains a cli script.  You can pull in the package globally using npm
+`npm install -g project-name-generator`
+
+Call from your command line
+```
+project-name-generator
+{ raw: [ 'spry', 'bath' ],
+  dashed: 'spry-bath',
+  spaced: 'spry bath' }
+```
+
+For CLI options 
+```
+project-name-generator -h
+
+Usage: project-name-generator [options]
+
+
+Options:
+
+  -V, --version          output the version number
+  -w, --words [num]      number of words [2]
+  -n, --numbers          use numbers
+  -a, --alliterative     use alliterative
+  -o, --output [output]  output type [raw|dashed|spaced]
+  -h, --help             output usage information
+```
+
 ## API
 The module returns single method `generate(options)`
 
