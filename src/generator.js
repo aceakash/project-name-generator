@@ -1,6 +1,6 @@
-var _ = require('lodash'),
-  nouns = require('../src/nouns'),
-  adjectives = require('../src/adjectives');
+const _ = require('lodash');
+const nouns = require('./nouns');
+const adjectives = require('./adjectives');
 
 
 module.exports = generate;
