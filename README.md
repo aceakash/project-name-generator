@@ -33,7 +33,7 @@ This package contains a cli script.  You can pull in the package globally using 
 
 Call from your command line
 ```
-project-name-generator
+$ project-name-generator
 { raw: [ 'spry', 'bath' ],
   dashed: 'spry-bath',
   spaced: 'spry bath' }
@@ -109,7 +109,7 @@ npm install
 npm test
 ```
 
-The library has been tested with Node.js 6.11.0
+The library has been tested with Node.js 8.6.0
 
 ## Status
 [ ![Build Status for aceakash/project-name-generator](https://codeship.com/projects/261b5340-4472-0134-6925-4ed1b3e90ffc/status?branch=master)](https://codeship.com/projects/168462)
