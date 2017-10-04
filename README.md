@@ -33,7 +33,7 @@ This package contains a cli script.  You can pull in the package globally using 
 
 Call from your command line
 ```
-project-name-generator
+$ project-name-generator
 { raw: [ 'spry', 'bath' ],
   dashed: 'spry-bath',
   spaced: 'spry bath' }
