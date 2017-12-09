@@ -4,7 +4,9 @@
   "description": "Generate a random, unique, heroku-like name for your app/project/server etc. e.g. \"resonant-silence\"",
   "main": "src/generator.js",
   "scripts": {
-    "test": "mocha spec/**/*.spec.js"
+    "test": "mocha spec/**/*.spec.js",
+    "gen": "node src/generator-bin.js",
+    "help:gen": "node src/generator-bin.js -h"
   },
   "repository": {
     "type": "git",
