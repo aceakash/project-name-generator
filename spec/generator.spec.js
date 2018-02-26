@@ -22,6 +22,7 @@ describe('generator', function () {
         expect(projName.dashed).to.not.be.undefined();
         expect(projName.spaced).to.not.be.undefined();
         expect(projName.raw).to.not.be.undefined();
+        expect(projName.camelcase).to.not.be.undefined();
       });
 
       it('has a property raw which is an array of two strings', function () {
@@ -44,6 +45,10 @@ describe('generator', function () {
 
       it("has a property spaced, which is a string of raw's items joined with a space", function () {
         expect(projName.spaced).to.be(projName.raw.join(' '));
+      });
+
+      it("has a property camlecase, which is a string of raw's items joined and camelcase formatted", function () {
+        expect(projName.camelcase).to.be(generate.camelCase(projName.raw));
       });
     });
 
@@ -106,6 +111,7 @@ describe('generator', function () {
       expect(name.dashed).to.not.be.undefined();
       expect(name.spaced).to.not.be.undefined();
       expect(name.raw).to.not.be.undefined();
+      expect(name.camelcase).to.not.be.undefined();
     });
   });
 });

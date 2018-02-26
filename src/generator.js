@@ -19,7 +19,8 @@ function generate(options) {
   return {
     raw: raw,
     dashed: raw.join('-'),
-    spaced: raw.join(' ')
+    spaced: raw.join(' '),
+    camelcase: camelCase(raw)
   };
 }
 
@@ -46,4 +47,11 @@ function getRawProjName(options) {
 function getAlliterativeMatches(arr, letter) {
   var check = letter.toLowerCase();
   return _.filter(arr, function(elm) { return elm.substring(0, 1).toLowerCase() === check; });
+}
+
+generate.camelCase = camelCase;
+function camelCase(input) {
+  return input.map(function(n, i) {
+    return i === 0 || typeof n !== 'string' ? n : n.substr(0, 1).toUpperCase() + n.substr(1);
+  }).join("");
 }
