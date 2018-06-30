@@ -20,7 +20,8 @@ function generate(options) {
     raw: raw,
     dashed: raw.join('-'),
     spaced: raw.join(' '),
-    dot: raw.join('.')
+    dot: raw.join('.'),
+    under_scored: raw.join('_')
   };
 }
 
