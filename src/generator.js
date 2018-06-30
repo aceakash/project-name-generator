@@ -2,6 +2,7 @@ const _ = require('lodash');
 const nouns = require('./nouns');
 const fruits = require('./fruits');
 const adjectives = require('./adjectives');
+const thailand_provinces = require('./thailand_provinces');
 
 
 module.exports = generate;
@@ -35,14 +36,14 @@ function getRawProjName(options) {
       raw.push(_.sample(adjectives).toLowerCase());
   });
   
-  var vocab = options.vocab === 'fruits' ? fruits : nouns;
+  var vocab = getVocab(options);
 
   if (options.alliterative)
-    raw.push(_.sample(getAlliterativeMatches(vocab, raw[0].substring(0, 1))));
+    raw.push(_.sample(getAlliterativeMatches(vocab, raw[0].substring(0, 1))).replace(/\s/g, "-"));
   else
-    raw.push(_.sample(vocab).toLowerCase());
+    raw.push(_.sample(vocab).toLowerCase().replace(/\s/g, "-"));
 
-  if (options.number) {
+  if (options.number || options.geo === 'numbers') {
     raw.push(_.random(1, 9999));
   }
   return raw;
@@ -51,4 +52,14 @@ function getRawProjName(options) {
 function getAlliterativeMatches(arr, letter) {
   var check = letter.toLowerCase();
   return _.filter(arr, function(elm) { return elm.substring(0, 1).toLowerCase() === check; });
+}
+
+function getVocab(options) {
+
+  if(options.geo === undefined) {
+    return options.vocab === 'fruits' ? fruits : nouns;
+  }
+  else {
+    return thailand_provinces;
+  }
 }
