@@ -8,7 +8,7 @@ program
     .option('-w, --words [num]', 'number of words [2]', 2)
     .option('-n, --numbers', 'use numbers')
     .option('-a, --alliterative', 'use alliterative')
-    .option('-o, --output [output]', 'output type [raw|dashed|spaced]', /^(raw|dashed|spaced)$/i)
+    .option('-o, --output [output]', 'output type [raw|dashed|spaced]', /^(raw|dashed|spaced|dot)$/i)
     .parse(process.argv)
 
 let project_name = generate({words: program.words, number: program.numbers, alliterative: program.alliterative});
@@ -19,6 +19,8 @@ if (program.output == "dashed"){
     console.log(project_name.raw);
 } else if (program.output == "spaced") {
     console.log(project_name.spaced);
+} else if (program.output == "dot") {
+    console.log(project_name.dot);
 } else {
     console.log(project_name);
 }

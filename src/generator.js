@@ -19,7 +19,8 @@ function generate(options) {
   return {
     raw: raw,
     dashed: raw.join('-'),
-    spaced: raw.join(' ')
+    spaced: raw.join(' '),
+    dot: raw.join('.')
   };
 }
 
