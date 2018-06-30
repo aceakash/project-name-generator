@@ -52,7 +52,8 @@ Options:
   -w, --words [num]      number of words [2]
   -n, --numbers          use numbers
   -a, --alliterative     use alliterative
-  -o, --output [output]  output type [raw|dashed|spaced]
+  -o, --output [output]  output type [raw|dashed|spaced|dot|under_scored]
+  -v, --vocab [category] category of vocaburaries [default|fruits]
   -h, --help             output usage information
 ```
 
