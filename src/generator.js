@@ -1,5 +1,6 @@
 const _ = require('lodash');
 const nouns = require('./nouns');
+const fruits = require('./fruits');
 const adjectives = require('./adjectives');
 
 
@@ -33,11 +34,13 @@ function getRawProjName(options) {
     else
       raw.push(_.sample(adjectives).toLowerCase());
   });
+  
+  var vocab = options.vocab === 'fruits' ? fruits : nouns;
 
   if (options.alliterative)
-    raw.push(_.sample(getAlliterativeMatches(nouns, raw[0].substring(0, 1))));
+    raw.push(_.sample(getAlliterativeMatches(vocab, raw[0].substring(0, 1))));
   else
-    raw.push(_.sample(nouns).toLowerCase());
+    raw.push(_.sample(vocab).toLowerCase());
 
   if (options.number) {
     raw.push(_.random(1, 9999));
