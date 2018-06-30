@@ -10,13 +10,15 @@ program
     .option('-a, --alliterative', 'use alliterative')
     .option('-o, --output [output]', 'output type [raw|dashed|spaced|dot|under_scored]', /^(raw|dashed|spaced|dot|under_scored)$/i)
     .option('-v, --vocab [category]', 'category of vocaburaries [default|fruits]', /^(default|fruits)$/i)
+    .option('-g, --geo [category]', 'category of geolocations [default|numbers]', /^(default|numbers)$/i)
     .parse(process.argv)
 
 let project_name = generate({
     words: program.words, 
     number: program.numbers, 
     alliterative: program.alliterative, 
-    vocab: program.vocab
+    vocab: program.vocab,
+    geo: program.geo
 });
 
 if (program.output == "dashed"){
