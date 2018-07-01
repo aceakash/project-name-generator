@@ -3,7 +3,7 @@ const nouns = require('./nouns');
 const fruits = require('./fruits');
 const adjectives = require('./adjectives');
 const thailand_provinces = require('./thailand_provinces');
-
+const thailand_districts = require('./thailand_districts');
 
 module.exports = generate;
 
@@ -67,7 +67,7 @@ function getVocab(options) {
     return options.vocab === 'fruits' ? fruits : nouns;
   }
   else {
-    return thailand_provinces;
+    return options.geo === 'default' || options.geo === 'numbers' ? thailand_provinces : thailand_districts;
   }
 }
 
