@@ -23,7 +23,7 @@ generate({ words: 4 }).raw; // ['tiny', 'crabby', 'wired', 'quicksand']
 
 generate({ words: 4, number: true }).dashed; // 'breakable-judicious-luxuriant-tax-3931'
 
-generate({ words: 2, alliterative: true }).spaced; // 'elegant experience'
+generate({ words: 2, startingLetter: 'e', alliterative: true }).spaced; // 'elegant experience'
 
 generate({ words: 2, alliterative: 'c' }).dashed; // 'crabby-cactus'
 
@@ -56,6 +56,7 @@ Options:
   -a, --alliterative     use alliterative
   -o, --output [output]  output type [raw|dashed|spaced|dot|under_scored]
   -v, --vocab [category] category of vocaburaries [default|fruits]
+  -l, --letter [letter]  specify first letter
   -h, --help             output usage information
 ```
 
@@ -76,6 +77,7 @@ The `options` argument object can have properties
 * **words** (number) - Number of words generated (excluding number). All words will be adjectives, except the last one which will be a noun. Defaults to **2**.
 * **number** (boolean) - Whether a numeric suffix is generated or not. The number is between 1 - 9999, both inclusive. Defaults to **false**.
 * **alliterative** (boolean/string) - Whether to output words beginning with the same letter or not. If a string is passed, returns only words starting with that character. Defaults to **false**.
+* **startingLetter** (string) - Specifies the letter to start the project name with. Defaults to **null**.
 
 `generate({ words: 3 })` will return:
 ```javascript
@@ -95,7 +97,7 @@ The `options` argument object can have properties
 }
 ```
 
-`generate({ words: 2, number: false, alliterative: true })` will return:
+`generate({ words: 2, number: false, startingLetter: 'e', alliterative: true })` will return:
 ```javascript
 {
   raw: [ 'elegant', 'experience' ],
