@@ -34,8 +34,12 @@ function getRawProjName(options) {
   _.times(options.words - 1, function () {
     if (options.alliterative && raw.length)
       raw.push(_.sample(getAlliterativeMatches(adjectives, raw[0].substring(0, 1))));
-    else
-      raw.push(_.sample(adjectives).toLowerCase());
+    else {
+      if (typeof options.alliterative === 'string' && options.alliterative.length)
+        raw.push(_.sample(getAlliterativeMatches(adjectives, options.alliterative.substring(0, 1))));
+      else
+        raw.push(_.sample(adjectives).toLowerCase());
+    }
   });
 
   var vocab = getVocab(options);
