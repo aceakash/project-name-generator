@@ -25,6 +25,8 @@ generate({ words: 4, number: true }).dashed; // 'breakable-judicious-luxuriant-t
 
 generate({ words: 2, alliterative: true }).spaced; // 'elegant experience'
 
+generate({ words: 2, alliterative: 'c' }).dashed; // 'crabby-cactus'
+
 ```
 
 ## Quickstart CLI
@@ -72,7 +74,7 @@ The `options` argument object can have properties
 
 * **words** (number) - Number of words generated (excluding number). All words will be adjectives, except the last one which will be a noun. Defaults to **2**.
 * **number** (boolean) - Whether a numeric suffix is generated or not. The number is between 1 - 9999, both inclusive. Defaults to **false**.
-* **alliterative** (boolean) - Whether to output words beginning with the same letter or not. Defaults to **false**.
+* **alliterative** (boolean/string) - Whether to output words beginning with the same letter or not. If a string is passed, returns only words starting with that character. Defaults to **false**.
 
 `generate({ words: 3 })` will return:
 ```javascript
@@ -98,6 +100,15 @@ The `options` argument object can have properties
   raw: [ 'elegant', 'experience' ],
   dashed: 'elegant-experience',
   spaced: 'elegant experience'
+}
+```
+
+`generate({ words: 2, number: false, alliterative: 'c' })` will return:
+```javascript
+{
+  raw: [ 'crabby', 'cactus' ],
+  dashed: 'crabby-cactus',
+  spaced: 'crabby cactus'
 }
 ```
 
