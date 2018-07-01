@@ -26,6 +26,7 @@ describe('generator', function () {
         expect(projName.raw).to.not.be.undefined();
         expect(projName.dot).to.not.be.undefined();
         expect(projName.under_scored).to.not.be.undefined();
+        expect(projName.camelcase).to.not.be.undefined();
       });
 
       it('has a property raw which is an array of two strings', function () {
@@ -56,6 +57,10 @@ describe('generator', function () {
 
       it("has a property under_scored, which is a string of raw's items joined with an underscored", function () {
         expect(projName.under_scored).to.be(projName.raw.join('_'));
+      });
+
+      it("has a property camlecase, which is a string of raw's items joined and camelcase formatted", function () {
+        expect(projName.camelcase).to.be(generate.camelCase(projName.raw));
       });
     });
 
@@ -143,6 +148,7 @@ describe('generator', function () {
       expect(name.dashed).to.not.be.undefined();
       expect(name.spaced).to.not.be.undefined();
       expect(name.raw).to.not.be.undefined();
+      expect(name.camelcase).to.not.be.undefined();
     });
   });
 });

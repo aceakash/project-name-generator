@@ -13,6 +13,7 @@ function generate(options) {
     number: false,
     words: 2,
     alliterative: false,
+    vocab: 'default',
   };
   options = _.merge(defaults, options || {});
 
@@ -23,7 +24,8 @@ function generate(options) {
     dashed: raw.join('-'),
     spaced: raw.join(' '),
     dot: raw.join('.'),
-    under_scored: raw.join('_')
+    under_scored: raw.join('_'),
+    camelcase: camelCase(raw)
   };
 }
 
@@ -35,7 +37,7 @@ function getRawProjName(options) {
     else
       raw.push(_.sample(adjectives).toLowerCase());
   });
-  
+
   var vocab = getVocab(options);
 
   if (options.alliterative)
@@ -62,4 +64,11 @@ function getVocab(options) {
   else {
     return thailand_provinces;
   }
+}
+
+generate.camelCase = camelCase;
+function camelCase(input) {
+  return input.map(function(n, i) {
+    return i === 0 || typeof n !== 'string' ? n : n.substr(0, 1).toUpperCase() + n.substr(1);
+  }).join("");
 }
