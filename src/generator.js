@@ -14,6 +14,7 @@ function generate(options) {
     words: 2,
     alliterative: false,
     vocab: 'default',
+    startingLetter: null,
   };
   options = _.merge(defaults, options || {});
 
@@ -38,7 +39,7 @@ function getRawProjName(options) {
       if (typeof options.alliterative === 'string' && options.alliterative.length)
         raw.push(_.sample(getAlliterativeMatches(adjectives, options.alliterative.substring(0, 1))));
       else
-        raw.push(_.sample(adjectives).toLowerCase());
+      raw.push(_.sample(options.startingLetter?getAlliterativeMatches(adjectives, options.startingLetter.substring(0,1).toLowerCase()):adjectives).toLowerCase());
     }
   });
 
