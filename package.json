@@ -1,6 +1,6 @@
 {
   "name": "project-name-generator",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "Generate a random, unique, heroku-like name for your app/project/server etc. e.g. \"resonant-silence\"",
   "main": "src/generator.js",
   "scripts": {
@@ -27,12 +27,12 @@
   "author": "Akash Kurdekar",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^3.0.2",
-    "must": "^0.13.2"
+    "mocha": "^5.1.1",
+    "must": "^0.13.4"
   },
   "dependencies": {
-    "commander": "^2.11.0",
-    "lodash": "^4.17.4"
+    "commander": "^2.15.1",
+    "lodash": "^4.17.10"
   },
   "bin": {
     "project-name-generator": "src/generator-bin.js"
