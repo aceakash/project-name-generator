@@ -9,7 +9,7 @@ program
     .option('-n, --numbers', 'use numbers')
     .option('-a, --alliterative', 'use alliterative')
     .option('-o, --output [output]', 'output type [raw|dashed|spaced|dot|under_scored|camelcase]', /^(raw|dashed|spaced|dot|under_scored|camelcase)$/i)
-    .option('-v, --vocab [category]', 'category of vocaburaries [default|fruits]', /^(default|fruits)$/i)
+    .option('-v, --vocab [category]', 'category of vocaburaries [default|fruits|breads]', /^(default|fruits|breads)$/i)
     .option('-g, --geo [category]', 'category of geolocations [default|numbers]', /^(default|numbers)$/i)
     .option('-l, --letter [letter]', 'specify first letter')
     .parse(process.argv)

@@ -4,6 +4,7 @@ const fruits = require('./fruits');
 const adjectives = require('./adjectives');
 const thailand_provinces = require('./thailand_provinces');
 const thailand_districts = require('./thailand_districts');
+const breads = require('./breads');
 
 module.exports = generate;
 
@@ -64,7 +65,12 @@ function getAlliterativeMatches(arr, letter) {
 function getVocab(options) {
 
   if(options.geo === undefined) {
-    return options.vocab === 'fruits' ? fruits : nouns;
+    switch(options.vocab)
+    {
+      case "fruits": return fruits;
+      case "breads": return breads;
+      default: return nouns;
+    }
   }
   else {
     return options.geo === 'default' || options.geo === 'numbers' ? thailand_provinces : thailand_districts;

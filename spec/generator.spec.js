@@ -4,6 +4,7 @@ var _ = require('lodash'),
   generate = require('../src/generator'),
   fruits = require('../src/fruits'),
   thailand_provinces = require('../src/thailand_provinces'),
+  breads = require('../src/breads'),
   expect = require('must');
 
 describe('generator', function () {
@@ -130,6 +131,13 @@ describe('generator', function () {
         expect(_.includes(adjectives, projName.raw[0])).to.be(true);
         expect(_.includes(fruits, projName.raw[1])).to.be(true);
       });
+
+      it('with {words: 2, number: false, alliterative: false, vocab: \'breads\'}, has 1 adjective and 1 noun that is from breads', function() {
+        projName = generate({words: 2, number: false, alliterative: false, vocab: 'breads'});
+        expect(projName.raw.length).to.be(2);
+        expect(_.includes(adjectives, projName.raw[0])).to.be(true);
+        expect(_.includes(breads, projName.raw[1])).to.be(true);
+      });      
 
       it('with {words: 2, number: false, alliterative: false, geo: \'default\'},' + 
          ' has 1 adjective and 1 noun that is from thailand provinces', function() {
