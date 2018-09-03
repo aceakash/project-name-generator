@@ -6,7 +6,7 @@ const adjectives = require('./adjectives');
 module.exports = generate;
 
 generate.generate = generate;
-function generate(options) {
+function generate(_nouns,_adjectives,options) {
   var defaults = {
     number: false,
     words: 2,
@@ -14,7 +14,7 @@ function generate(options) {
   };
   options = _.merge(defaults, options || {});
 
-  var raw = getRawProjName(options);
+  var raw = getRawProjName(_nouns?_nouns:nouns, _adjectives?_adjectives:adjectives, options);
 
   return {
     raw: raw,
@@ -23,19 +23,19 @@ function generate(options) {
   };
 }
 
-function getRawProjName(options) {
+function getRawProjName(_nouns,_adjectives,options) {
   var raw = [];
   _.times(options.words - 1, function () {
     if (options.alliterative && raw.length)
-      raw.push(_.sample(getAlliterativeMatches(adjectives, raw[0].substring(0, 1))));
+      raw.push(_.sample(getAlliterativeMatches(_adjectives, raw[0].substring(0, 1))));
     else
-      raw.push(_.sample(adjectives).toLowerCase());
+      raw.push(_.sample(_adjectives).toLowerCase());
   });
 
   if (options.alliterative)
-    raw.push(_.sample(getAlliterativeMatches(nouns, raw[0].substring(0, 1))));
+    raw.push(_.sample(getAlliterativeMatches(_nouns, raw[0].substring(0, 1))));
   else
-    raw.push(_.sample(nouns).toLowerCase());
+    raw.push(_.sample(_nouns).toLowerCase());
 
   if (options.number) {
     raw.push(_.random(1, 9999));
