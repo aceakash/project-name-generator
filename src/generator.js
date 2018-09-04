@@ -9,6 +9,8 @@ generate.generate = generate;
 function generate(options) {
   var defaults = {
     number: false,
+    nouns,
+    adjectives,
     words: 2,
     alliterative: false,
   };
@@ -27,15 +29,15 @@ function getRawProjName(options) {
   var raw = [];
   _.times(options.words - 1, function () {
     if (options.alliterative && raw.length)
-      raw.push(_.sample(getAlliterativeMatches(adjectives, raw[0].substring(0, 1))));
+      raw.push(_.sample(getAlliterativeMatches(options.adjectives, raw[0].substring(0, 1))));
     else
-      raw.push(_.sample(adjectives).toLowerCase());
+      raw.push(_.sample(options.adjectives).toLowerCase());
   });
 
   if (options.alliterative)
-    raw.push(_.sample(getAlliterativeMatches(nouns, raw[0].substring(0, 1))));
+    raw.push(_.sample(getAlliterativeMatches(options.nouns, raw[0].substring(0, 1))));
   else
-    raw.push(_.sample(nouns).toLowerCase());
+    raw.push(_.sample(options.nouns).toLowerCase());
 
   if (options.number) {
     raw.push(_.random(1, 9999));
