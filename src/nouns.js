@@ -340,7 +340,6 @@ module.exports = [
   "harbor",
   "harmony",
   "hat",
-  "hate",
   "head",
   "health",
   "heat",
