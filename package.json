@@ -29,7 +29,7 @@
     "must": "^0.13.4"
   },
   "dependencies": {
-    "commander": "^2.15.1",
+    "commander": "^2.20.0",
     "lodash": "^4.17.10"
   },
   "bin": {
