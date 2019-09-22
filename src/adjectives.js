@@ -661,7 +661,7 @@ module.exports =
   'main',
   'majestic',
   'major',
-  'makeshift'
+  'makeshift',
   'malicious',
   'mammoth',
   'maniacal',
@@ -769,7 +769,7 @@ module.exports =
   'oceanic',
   'odd',
   'offbeat',
-  'okay'
+  'okay',
   'omniscient',
   'onerous',
   'open',
