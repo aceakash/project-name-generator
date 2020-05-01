@@ -4,7 +4,9 @@
   "description": "Generate a random, unique, heroku-like name for your app/project/server etc. e.g. \"resonant-silence\"",
   "main": "src/generator.js",
   "scripts": {
-    "test": "mocha spec/**/*.spec.js"
+    "test": "mocha spec/**/*.spec.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -30,9 +32,11 @@
   },
   "dependencies": {
     "commander": "^2.15.1",
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "snyk": "^1.316.1"
   },
   "bin": {
     "project-name-generator": "src/generator-bin.js"
-  }
+  },
+  "snyk": true
 }
