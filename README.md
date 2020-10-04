@@ -57,7 +57,7 @@ Options:
 ```
 
 ## API
-The module returns single method `generate(options)`
+The module returns a single function, `generate(options)`
 
 Calling `generate()` with no arguments will return an object:
 ```javascript
@@ -109,9 +109,7 @@ npm install
 npm test
 ```
 
-The library has been tested with Node.js 8.6.0
+The library has been tested with Node.js 12.18.4
 
 ## Status
-[ ![Build Status for aceakash/project-name-generator](https://codeship.com/projects/261b5340-4472-0134-6925-4ed1b3e90ffc/status?branch=master)](https://codeship.com/projects/168462)
-
 ![How up-to-date are dependencies?](https://david-dm.org/aceakash/project-name-generator.svg)
