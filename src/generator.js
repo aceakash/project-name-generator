@@ -38,7 +38,10 @@ function getRawProjName(options) {
     raw.push(_.sample(nouns).toLowerCase());
 
   if (options.number) {
-    raw.push(_.random(1, 9999));
+    // `true` check for backwards-compat support of boolean value, generates 4 digits (1-9999)
+    var exponent = options.number === true ? 4 : parseInt(options.number, 10);
+    exponent = Math.min(20, Math.max(1, Math.abs(exponent)));
+    raw.push(_.random(1, Math.pow(10, exponent) - 1));
   }
   return raw;
 }

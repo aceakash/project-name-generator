@@ -6,7 +6,7 @@ const program = require('commander')
 program
     .version('1.0.0')
     .option('-w, --words [num]', 'number of words [2]', 2)
-    .option('-n, --numbers', 'use numbers')
+    .option('-n, --numbers [num]', 'use numbers')
     .option('-a, --alliterative', 'use alliterative')
     .option('-o, --output [output]', 'output type [raw|dashed|spaced]', /^(raw|dashed|spaced)$/i)
     .parse(process.argv)
