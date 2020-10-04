@@ -1125,8 +1125,6 @@ module.exports =
   'thriving',
   'thundering',
   'tidy',
-  'tight',
-  'tightfisted',
   'timely',
   'tiny',
   'tired',
