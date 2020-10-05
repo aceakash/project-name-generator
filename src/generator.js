@@ -19,6 +19,7 @@ function generate(options) {
   return {
     raw: raw,
     dashed: raw.join('-'),
+    under: raw.join('_'),
     spaced: raw.join(' ')
   };
 }
