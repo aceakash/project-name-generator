@@ -26,7 +26,7 @@
   "author": "Akash Kurdekar",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^8.1.3",
+    "mocha": "^8.2.1",
     "must": "^0.13.4"
   },
   "dependencies": {
