@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "commander": "^6.1.0",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.21"
   },
   "bin": {
     "project-name-generator": "src/generator-bin.js"
