@@ -30,7 +30,7 @@
     "must": "^0.13.4"
   },
   "dependencies": {
-    "commander": "^6.1.0",
+    "commander": "^8.0.0",
     "lodash": "^4.17.20"
   },
   "bin": {
