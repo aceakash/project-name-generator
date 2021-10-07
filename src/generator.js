@@ -54,7 +54,11 @@ function getRawProjName(options) {
  * Get the same or the similar matches from the string
  ********************************************/
 function getIncludedMatches(arr, word, length) {
-  const format = word.replace(/\s/g,''); // Remove all whitespaces
+  if (!_.isString(word)) {
+    return [];
+  }
+  // User would be able to inject any type of RegEx escape character which would trigger an error
+  const format = word.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&"); // Remove all unsafe characters
   const sameMatch = _.filter(arr, function(w) {
     return new RegExp(`${format}`).test(w); // Find the same match
   });
