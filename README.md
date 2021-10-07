@@ -25,6 +25,11 @@ generate({ words: 4, number: true }).dashed; // 'breakable-judicious-luxuriant-t
 
 generate({ words: 2, alliterative: true }).spaced; // 'elegant experience'
 
+generate({ words: 4, includes: "word" }).raw; // [ 'workable', 'work', 'berserk', 'dark' ]
+
+generate({ words: 4, includes: "word" }).dashed; // 'workable-work-berserk-dark'
+
+generate({ words: 4, includes: "word" }).spaced; // 'workable work berserk dark'
 ```
 
 ## Quickstart CLI
@@ -100,6 +105,15 @@ The `options` argument object can have properties
   raw: [ 'elegant', 'experience' ],
   dashed: 'elegant-experience',
   spaced: 'elegant experience'
+}
+```
+
+`generate({ words: 4, includes: "work" })` will return:
+```javascript
+{
+  raw: [ 'workable', 'work', 'berserk', 'dark' ],
+  dashed: 'workable-work-berserk-dark',
+  spaced: 'workable work berserk dark'
 }
 ```
 
