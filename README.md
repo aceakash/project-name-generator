@@ -54,6 +54,7 @@ Options:
   -a, --alliterative     use alliterative
   -o, --output [output]  output type [raw|dashed|spaced]
   -h, --help             output usage information
+  -i, --includes         include substring
 ```
 
 ## API
@@ -73,6 +74,7 @@ The `options` argument object can have properties
 * **words** (number) - Number of words generated (excluding number). All words will be adjectives, except the last one which will be a noun. Defaults to **2**.
 * **number** (boolean) - Whether a numeric suffix is generated or not. The number is between 1 - 9999, both inclusive. Defaults to **false**.
 * **alliterative** (boolean) - Whether to output words beginning with the same letter or not. Defaults to **false**.
+* **includes** (string) - Whether to search with specific substring. ( This field will disable `number` and `alliterative` fields )
 
 `generate({ words: 3 })` will return:
 ```javascript

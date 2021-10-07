@@ -9,7 +9,7 @@ generate.generate = generate;
 function generate(options) {
   var defaults = {
     number: false,
-    words: 2,
+    words: 4,
     alliterative: false,
   };
   options = _.merge(defaults, options || {});
@@ -25,22 +25,43 @@ function generate(options) {
 
 function getRawProjName(options) {
   var raw = [];
-  _.times(options.words - 1, function () {
-    if (options.alliterative && raw.length)
-      raw.push(_.sample(getAlliterativeMatches(adjectives, raw[0].substring(0, 1))));
+
+  /* Program branches between randomly or precisely picked results */
+  if (options.includes) {
+    raw = getIncludedMatches(_.concat(adjectives, nouns), options.includes, options.words);
+  } else {
+    _.times(options.words - 1, function () {
+      if (options.alliterative && raw.length)
+        raw.push(_.sample(getAlliterativeMatches(adjectives, raw[0].substring(0, 1))));
+      else
+        raw.push(_.sample(adjectives).toLowerCase());
+    });
+  
+    if (options.alliterative)
+      raw.push(_.sample(getAlliterativeMatches(nouns, raw[0].substring(0, 1))));
     else
-      raw.push(_.sample(adjectives).toLowerCase());
-  });
-
-  if (options.alliterative)
-    raw.push(_.sample(getAlliterativeMatches(nouns, raw[0].substring(0, 1))));
-  else
-    raw.push(_.sample(nouns).toLowerCase());
-
-  if (options.number) {
-    raw.push(_.random(1, 9999));
+      raw.push(_.sample(nouns).toLowerCase());
+  
+    if (options.number) {
+      raw.push(_.random(1, 9999));
+    }  
   }
+
   return raw;
+}
+
+/********************************************
+ * Get the same or the similar matches from the string
+ ********************************************/
+function getIncludedMatches(arr, word, length) {
+  const format = word.replace(/\s/g,''); // Remove all whitespaces
+  const sameMatch = _.filter(arr, function(w) {
+    return new RegExp(`${format}`).test(w); // Find the same match
+  });
+  const similarMatch = _.filter(arr, function(w) {
+    return new RegExp(`${format.match(/.{1,2}/g).join('|')}`).test(w);  // Find the similar match
+  });
+  return [ ...new Set(_.concat(sameMatch, similarMatch)) ].splice(0, length); // Return unique set
 }
 
 function getAlliterativeMatches(arr, letter) {

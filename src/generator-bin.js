@@ -8,10 +8,16 @@ program
     .option('-w, --words [num]', 'number of words [2]', 2)
     .option('-n, --numbers', 'use numbers')
     .option('-a, --alliterative', 'use alliterative')
+    .option('-i, --includes', 'include substring')
     .option('-o, --output [output]', 'output type [raw|dashed|spaced]', /^(raw|dashed|spaced)$/i)
     .parse(process.argv)
 
-let project_name = generate({words: program.words, number: program.numbers, alliterative: program.alliterative});
+let project_name = generate({
+    words: program.words,
+    number: program.numbers,
+    alliterative: program.alliterative,
+    includes: program.includes
+});
 
 if (program.output == "dashed"){
     console.log(project_name.dashed);

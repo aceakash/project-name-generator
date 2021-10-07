@@ -3,6 +3,7 @@ declare module 'project-name-generator' {
     alliterative?: boolean;
     number?: boolean;
     words?: number;
+    includes?: string;
   }
 
   type Result = {
