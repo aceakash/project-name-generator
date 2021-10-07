@@ -80,6 +80,7 @@ The `options` argument object can have properties
 * **number** (boolean) - Whether a numeric suffix is generated or not. The number is between 1 - 9999, both inclusive. Defaults to **false**.
 * **alliterative** (boolean) - Whether to output words beginning with the same letter or not. Defaults to **false**.
 * **includes** (string) - Whether to search with specific substring. ( This field will disable `number` and `alliterative` fields )
+* **extend** (object) - Extend wordlist by importing list of strings in one or both of the following fields: `adjectives` or `nouns`.
 
 `generate({ words: 3 })` will return:
 ```javascript

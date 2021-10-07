@@ -16,7 +16,7 @@ let project_name = generate({
     words: program.words,
     number: program.numbers,
     alliterative: program.alliterative,
-    includes: program.includes
+    includes: program.includes,
 });
 
 if (program.output == "dashed"){

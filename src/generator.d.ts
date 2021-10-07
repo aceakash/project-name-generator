@@ -4,6 +4,10 @@ declare module 'project-name-generator' {
     number?: boolean;
     words?: number;
     includes?: string;
+    extend?: {
+      adjectives?: string[];
+      nouns?: string[];
+    };
   }
 
   type Result = {

@@ -26,6 +26,15 @@ function generate(options) {
 function getRawProjName(options) {
   var raw = [];
 
+  if (options.extend) {
+    if (options.extend.adjectives) {
+      adjectives.push(...options.extend.adjectives);
+    }
+    if (options.extend.nouns) {
+      nouns.push(...options.extend.nouns);
+    }
+  }
+
   /* Program branches between randomly or precisely picked results */
   if (options.includes) {
     raw = getIncludedMatches(_.concat(adjectives, nouns), options.includes, options.words);
