@@ -67,7 +67,7 @@ function getIncludedMatches(arr, word, length) {
     return [];
   }
   // User would be able to inject any type of RegEx escape character which would trigger an error
-  const format = word.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1"); // Remove all unsafe characters
+  const format = word.replace(/([.?*+^$[\]\\(){}|-])/g, " "); // Remove all unsafe characters
   const sameMatch = _.filter(arr, function(w) {
     return new RegExp(`${format}`).test(w); // Find the same match
   });
