@@ -1,3 +1,6 @@
+# ⚰️ ⚰️  DEPRECATED ⚰️ ⚰️ 
+This project is no longer being supported.
+
 # Project Name Generator
 
 Generate quirky names like *spiffy-waterfall*, *sassy-bread*, *mature-dew-8239* to use wherever you need a random but memorable name.
