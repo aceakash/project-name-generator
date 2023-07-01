@@ -11,6 +11,7 @@ function generate(options) {
     number: false,
     words: 2,
     alliterative: false,
+    startingLetter: null,
   };
   options = _.merge(defaults, options || {});
 
@@ -29,7 +30,7 @@ function getRawProjName(options) {
     if (options.alliterative && raw.length)
       raw.push(_.sample(getAlliterativeMatches(adjectives, raw[0].substring(0, 1))));
     else
-      raw.push(_.sample(adjectives).toLowerCase());
+      raw.push(_.sample(options.startingLetter?getAlliterativeMatches(adjectives, options.startingLetter.substring(0,1).toLowerCase()):adjectives).toLowerCase());
   });
 
   if (options.alliterative)
